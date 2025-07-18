@@ -1,115 +1,139 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
-<head><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>MSME Business Doctor</title>
-<style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sriskanda Associates - MSME Consulting</title>
+  <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 20px;
-      color: #333;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
     }
-    .container {
-      max-width: 700px;
-      margin: auto;
-      background: #fff;
-      padding: 30px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      border-radius: 10px;
-    }
-    h1, h2 {
-      color: #2e7d32;
-    }
-    .cta {
-      background: #2e7d32;
+    header {
+      background-color: #004d40;
       color: white;
-      padding: 12px 18px;
+      padding: 1em;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      padding: 0.5em;
+      background: #e0f2f1;
+    }
+    nav button {
+      padding: 0.5em 1em;
       border: none;
-      text-decoration: none;
-      font-size: 16px;
-      display: inline-block;
-      margin-top: 15px;
+      background-color: #00796b;
+      color: white;
+      cursor: pointer;
       border-radius: 5px;
     }
-    .cta:hover {
-      background: #1b5e20;
+    .content {
+      padding: 2em;
+      max-width: 800px;
+      margin: auto;
     }
-    ul {
-      padding-left: 20px;
+    .features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1em;
+    }
+    .feature {
+      background: white;
+      padding: 1em;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .whatsapp-button {
+      display: block;
+      width: fit-content;
+      margin: 2em auto;
+      background-color: #25d366;
+      color: white;
+      padding: 0.75em 1.5em;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    @media (min-width: 600px) {
+      .features {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
+  <script>
+    const translations = {
+      en: {
+        title: "MSME Consulting Services",
+        points: [
+          "📊 Monthly Profit & Loss Reviews",
+          "📈 Quarterly Business Analysis",
+          "🏭 Production Improvement Suggestions",
+          "🕳️ Loophole/Gaps Highlighting",
+          "💼 1–2 Monthly Site Visits",
+          "💰 ₹15,000+ per engagement"
+        ],
+        whatsapp: "Chat with Us on WhatsApp"
+      },
+      kn: {
+        title: "ಎಂಎಸ್‌ಎಂಇ ಸಲಹಾ ಸೇವೆಗಳು",
+        points: [
+          "📊 ಮಾಸಿಕ ಲಾಭ ಮತ್ತು ನಷ್ಟ ವಿಮರ್ಶೆಗಳು",
+          "📈 ತ್ರೈಮಾಸಿಕ ವ್ಯಾಪಾರ ವಿಶ್ಲೇಷಣೆ",
+          "🏭 ಉತ್ಪಾದನಾ ಸುಧಾರಣಾ ಸಲಹೆಗಳು",
+          "🕳️ ಕೊರತೆಗಳ ಹೈಲೈಟ್ಸ್",
+          "💼 ತಿಂಗಳಿಗೆ 1–2 ಸ್ಥಳದ ಭೇಟಿಗಳು",
+          "💰 ಪ್ರತಿಯೊಂದು ಸಲಹೆಗೆ ₹15,000+"
+        ],
+        whatsapp: "ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ನಮ್ಮೊಂದಿಗೆ ಚಾಟ್ ಮಾಡಿ"
+      },
+      hi: {
+        title: "एमएसएमई परामर्श सेवाएँ",
+        points: [
+          "📊 मासिक लाभ और हानि की समीक्षा",
+          "📈 त्रैमासिक व्यापार विश्लेषण",
+          "🏭 उत्पादन सुधार सुझाव",
+          "🕳️ खामियों का विश्लेषण",
+          "💼 हर महीने 1–2 साइट विज़िट",
+          "💰 ₹15,000+ प्रति सेवा"
+        ],
+        whatsapp: "WhatsApp पर हमसे संपर्क करें"
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById("main-title").textContent = translations[lang].title;
+      const points = translations[lang].points;
+      const list = document.getElementById("feature-list");
+      list.innerHTML = "";
+      points.forEach((p) => {
+        const li = document.createElement("div");
+        li.className = "feature";
+        li.textContent = p;
+        list.appendChild(li);
+      });
+      document.getElementById("wa-link").textContent = translations[lang].whatsapp;
+    }
+
+    window.onload = () => setLang("en");
+  </script>
 </head>
 <body>
-<div style="text-align: right; margin: 10px;">
-<a href="#" onclick="setLanguage('en')">English</a> |
-  <a href="#" onclick="setLanguage('kn')">ಕನ್ನಡ</a> |
-  <a href="#" onclick="setLanguage('hi')">हिन्दी</a>
-</div>
-
-<div class="container">
-<h1>📊 MSME Business Doctor</h1>
-<p>Helping small businesses gain control, reduce loss, and grow profit – one month at a time.</p>
-<h2>✅ Services Offered</h2>
-<ul>
-<li>Monthly Profit &amp; Loss Review (no software needed)</li>
-<li>Production Analysis &amp; Loophole Identification</li>
-<li>Quarterly Performance Dashboard</li>
-<li>Improvement Action Plan &amp; WhatsApp Summary</li>
-<li>1–2 Monthly Site Visits + Remote Support</li>
-</ul>
-<h2>💼 Plans</h2>
-<ul>
-<li><strong>Starter (₹15,000/mo)</strong> – 1 Visit + P&amp;L + Loophole Report</li>
-<li><strong>Growth (₹25,000/mo)</strong> – 2 Visits + WhatsApp Support + Action Plan</li>
-<li><strong>Quarterly Boost (₹35,000/qtr)</strong> – Monthly Visit + Strategy + Team Training</li>
-</ul>
-<h2>🎯 Trial Offer</h2>
-<p>First month at just <strong>₹9,999</strong>. Limited to first 5 clients.</p>
-<a class="cta" href="https://wa.me/919845452314" target="_blank">📞 Contact via WhatsApp</a>
-</div>
-
-<section id="contact">
-<h2>📬 Contact Form</h2>
-<form action="https://formsubmit.co/your-email@example.com" method="POST">
-<input name="Name" placeholder="Your Name" required="" type="text"/><br/>
-<input name="Email" placeholder="Your Email" required="" type="email"/><br/>
-<input name="Phone" placeholder="Your WhatsApp Number" required="" type="text"/><br/>
-<textarea name="Message" placeholder="What help do you need?" required=""></textarea><br/>
-<button type="submit">Submit</button>
-</form>
-</section>
-
-<p style="text-align:center;">
-<a href="#" onclick="alert('Client login portal will be activated soon.')" style="color: #0077cc;">🔐 Client Login / Report Download</a>
-</p>
-
-<script>
-const translations = {
-  en: {
-    heading: "MSME Business Control & Analysis",
-    contact: "Contact Form",
-    submit: "Submit"
-  },
-  kn: {
-    heading: "ಎಂಎಸ್‌ಎಂಇ ವ್ಯಾಪಾರ ನಿಯಂತ್ರಣ ಮತ್ತು ವಿಶ್ಲೇಷಣೆ",
-    contact: "ಸಂಪರ್ಕ ಫಾರ್ಮ್",
-    submit: "ಸಲ್ಲಿಸು"
-  },
-  hi: {
-    heading: "एमएसएमई व्यापार नियंत्रण और विश्लेषण",
-    contact: "संपर्क फ़ॉर्म",
-    submit: "सबमिट करें"
-  }
-};
-function setLanguage(lang) {
-  document.querySelector("h1").innerText = translations[lang].heading;
-  document.querySelector("#contact h2").innerText = "📬 " + translations[lang].contact;
-  document.querySelector("#contact button").innerText = translations[lang].submit;
-}
-</script>
+  <header>
+    <h1 id="main-title">MSME Consulting Services</h1>
+  </header>
+  <nav>
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('kn')">ಕನ್ನಡ</button>
+    <button onclick="setLang('hi')">हिंदी</button>
+  </nav>
+  <div class="content">
+    <div class="features" id="feature-list"></div>
+    <a id="wa-link" class="whatsapp-button" href="https://wa.me/919845452314" target="_blank">Chat with Us on WhatsApp</a>
+  </div>
 </body>
 </html>
