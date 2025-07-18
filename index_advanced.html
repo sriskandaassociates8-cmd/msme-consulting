@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MSME Business Doctor</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    h1, h2 {
+      color: #2e7d32;
+    }
+    .cta {
+      background: #2e7d32;
+      color: white;
+      padding: 12px 18px;
+      border: none;
+      text-decoration: none;
+      font-size: 16px;
+      display: inline-block;
+      margin-top: 15px;
+      border-radius: 5px;
+    }
+    .cta:hover {
+      background: #1b5e20;
+    }
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+<div style="text-align: right; margin: 10px;">
+<a href="#" onclick="setLanguage('en')">English</a> |
+  <a href="#" onclick="setLanguage('kn')">ಕನ್ನಡ</a> |
+  <a href="#" onclick="setLanguage('hi')">हिन्दी</a>
+</div>
+
+<div class="container">
+<h1>📊 MSME Business Doctor</h1>
+<p>Helping small businesses gain control, reduce loss, and grow profit – one month at a time.</p>
+<h2>✅ Services Offered</h2>
+<ul>
+<li>Monthly Profit &amp; Loss Review (no software needed)</li>
+<li>Production Analysis &amp; Loophole Identification</li>
+<li>Quarterly Performance Dashboard</li>
+<li>Improvement Action Plan &amp; WhatsApp Summary</li>
+<li>1–2 Monthly Site Visits + Remote Support</li>
+</ul>
+<h2>💼 Plans</h2>
+<ul>
+<li><strong>Starter (₹15,000/mo)</strong> – 1 Visit + P&amp;L + Loophole Report</li>
+<li><strong>Growth (₹25,000/mo)</strong> – 2 Visits + WhatsApp Support + Action Plan</li>
+<li><strong>Quarterly Boost (₹35,000/qtr)</strong> – Monthly Visit + Strategy + Team Training</li>
+</ul>
+<h2>🎯 Trial Offer</h2>
+<p>First month at just <strong>₹9,999</strong>. Limited to first 5 clients.</p>
+<a class="cta" href="https://wa.me/919845452314" target="_blank">📞 Contact via WhatsApp</a>
+</div>
+
+<section id="contact">
+<h2>📬 Contact Form</h2>
+<form action="https://formsubmit.co/your-email@example.com" method="POST">
+<input name="Name" placeholder="Your Name" required="" type="text"/><br/>
+<input name="Email" placeholder="Your Email" required="" type="email"/><br/>
+<input name="Phone" placeholder="Your WhatsApp Number" required="" type="text"/><br/>
+<textarea name="Message" placeholder="What help do you need?" required=""></textarea><br/>
+<button type="submit">Submit</button>
+</form>
+</section>
+
+<p style="text-align:center;">
+<a href="#" onclick="alert('Client login portal will be activated soon.')" style="color: #0077cc;">🔐 Client Login / Report Download</a>
+</p>
+
+<script>
+const translations = {
+  en: {
+    heading: "MSME Business Control & Analysis",
+    contact: "Contact Form",
+    submit: "Submit"
+  },
+  kn: {
+    heading: "ಎಂಎಸ್‌ಎಂಇ ವ್ಯಾಪಾರ ನಿಯಂತ್ರಣ ಮತ್ತು ವಿಶ್ಲೇಷಣೆ",
+    contact: "ಸಂಪರ್ಕ ಫಾರ್ಮ್",
+    submit: "ಸಲ್ಲಿಸು"
+  },
+  hi: {
+    heading: "एमएसएमई व्यापार नियंत्रण और विश्लेषण",
+    contact: "संपर्क फ़ॉर्म",
+    submit: "सबमिट करें"
+  }
+};
+function setLanguage(lang) {
+  document.querySelector("h1").innerText = translations[lang].heading;
+  document.querySelector("#contact h2").innerText = "📬 " + translations[lang].contact;
+  document.querySelector("#contact button").innerText = translations[lang].submit;
+}
+</script>
+</body>
+</html>
